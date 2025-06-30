@@ -1,0 +1,70 @@
+.py-base {
+    padding-block: var(--py-base);
+}
+
+.py-lg {
+    padding-block: var(--py-lg);
+}
+
+.py-xl {
+    padding-block: var(--py-xl);
+}
+
+.px-lg {
+    padding-inline: var(--px-lg);
+}
+
+.container {
+    --max-width: 375px;
+    width: min(var(--max-width), 100% - var(--px-lg) * 2);
+    /*border: solid violet;*/
+    margin-inline: auto; /*Centralizando a página*/
+}
+
+/*Isso aqui serve para colocar dentro dessa classe todos os elementos que serão mostrados
+apenas em telas maiores, então por padrão (já que estamos fazendo mobile first) colocamos display:none*/
+.desktop-only {
+    display: none;
+}
+
+.even-columns {
+    display: grid;
+    gap: 1rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.gap-1 {
+    gap: 1rem;
+}
+
+/*colocamos a \ no .gap-1\.5 para podermos usar . como string e não início de classe*/
+.gap-1\.5 {
+    gap: 1.5rem;
+}
+
+.grid {
+    display: grid;
+}
+
+@media (width >= 80em) {
+    .container {
+        --max-width: 80rem;
+    }
+
+    .desktop-only {
+        /*Aqui mostramos os elementos que deverão aparecer em telas maiores*/
+        display: initial;
+    }
+
+    .even-columns {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+}

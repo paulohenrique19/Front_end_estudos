@@ -1,0 +1,442 @@
+/*CSS flexbox introdução*/
+
+h1 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.container {
+    border: dashed;
+}
+
+.container-itens {
+    --hue: 0;
+    text-align: center;
+    background-color: hsl(var(--hue), 100%, 70%);
+}
+
+/*Concepts:
+
+display: flex
+
+Os itens no CSS seguem um alinhamento de normal flow, ou seja,
+de cima para baixo, como um empilhamento, aplicando display flex,
+os itens naquela box, o eixo vertical é trocado com o horizontal,
+alinhando os itens da esquerda para a direita
+
+
+*/
+
+.concepts-display {
+    border: dashed;
+    display: flex; /*aplicando o display flex*/
+}
+
+.concepts-itens {
+    --hue: 0;
+    text-align: center;
+    background-color: hsl(var(--hue), 100%, 70%);
+}
+
+/*flex direction
+
+podemos alterar o eixo da direção dos elementos dentro de uma box usando o
+flex-direction.
+
+flex-direction: column (faz os elementos virarem colunas)
+flex-direction: row (faz os elementos serem disponibilizados como linhas em uma linha)
+
+display: flex; + flex-direction: column; : essa combinação inverte o eixo horizontal para vertical
+fazendo os elementos seguirem o normal flow
+
+flex-direction: column-reverse (normal flow, porém com a ordem dos itens invertidas)
+flex-direction: row-reverse (elementos dispostos na linha, porém com a ordem dos itens invertidas)
+
+
+*/
+
+.concepts-flexdirection {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+/*Justify-content
+
+Alinhamento dos itens dentro do container e distribuição dos elementos no eixo principal
+
+Podemos inserir alguns valores: 
+
+justify-content: flex-start (alinha para a esquerda, mas mantém o flow atual dos itens)
+justify-content: flex-end (alinha para a direita, mas mantém o flow atual dos itens)
+
+*/
+
+
+.justify-content-flex-start-end {
+    border: dashed;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.justify-content-center {
+    border: dashed;
+    display: flex;
+    justify-content: center;
+}
+
+.justify-content-evenly {
+    border: dashed;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.justify-content-around {
+    border: dashed;
+    display: flex;
+    justify-content: space-around;
+}
+
+.justify-content-between {
+    border: dashed;
+    display: flex;
+    justify-content: space-between;
+}
+
+.justify-content-flex-start-end-column {
+    border: dashed;
+    height: 30vh;
+    display: flex;
+    flex-direction: column; /*aplicando a direção dos elementos para coluna*/
+    justify-content: flex-end;
+}
+
+.justify-content-center-column {
+    border: dashed;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.justify-content-evenly-column {
+    border: dashed;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.justify-content-around-column {
+    border: dashed;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.justify-content-between-column {
+    border: dashed;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*Align-itens, alinhamento de itens no eixo cruzado*/
+
+.align-itens {
+    width: 20px;
+    --hue: 0;
+    text-align: center;
+    background-color: hsl(var(--hue), 100%, 70%);
+}
+
+.align-itens-stretch {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    align-items: stretch;
+}
+
+.align-itens-flex-start {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    align-items: flex-start;
+}
+
+.align-itens-center {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    align-items: center;
+}
+
+.align-itens-flex-end {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    align-items: flex-end;
+}
+
+.align-itens-baseline {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    align-items: baseline;
+}
+
+.align-itens-stretch-column {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.align-itens-flex-start-column {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.align-itens-center-column {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.align-itens-flex-end-column {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.align-itens-baseline-column {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+/*Gap e margin*/
+
+.gap {
+    border: dashed;
+    display: flex;
+    gap: 10%;
+}
+
+.margin {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    align-items: center;
+}
+
+/*multi line e Flex-wrap*/
+
+.flex-wrap {
+    border: dashed;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-wrap-itens {
+    width: 200px;
+    --hue: 0;
+    text-align: center;
+    background-color: hsl(var(--hue), 100%, 70%);
+}
+
+.flex-wrap {
+    border: dashed;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-wrap-reverse {
+    border: dashed;
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.align-content-flex-start {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.align-content-center {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.align-content-flex-end {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+}
+
+.align-content-space-around {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+
+.align-content-space-between {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.align-content-space-evenly {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-evenly;
+}
+
+
+
+.flex-wrap-align-itens-flex-start {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.flex-wrap-align-itens-center {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flex-wrap-align-itens-flex-end {
+    height: 30vh;
+    border: dashed;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+/*Sizing: Flex basis, grow and shrink*/
+
+.flex-properties-flex-basis {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    border: dashed;
+}
+
+.flex-basis-itens {
+    flex-basis: 120px;
+    --hue: 0;
+    text-align: center;
+    background-color: hsl(var(--hue), 100%, 70%);
+}
+
+.flex-properties-flex-grow {
+    display: flex;
+    border: dashed;
+}
+
+.flex-grow-itens {
+    flex-grow: 1;
+    --hue: 0;
+    text-align: center;
+    background-color: hsl(var(--hue), 100%, 70%);
+}
+
+.flex-grow-itens-2 {
+    flex-grow: 2;
+    --hue: 0;
+    text-align: center;
+    background-color: hsl(var(--hue), 100%, 70%);
+}
+
+.flex-properties-flex-shrink {
+    display: flex;
+    border: dashed;
+}
+
+.flex-shrink-itens {
+    flex-basis: 200px;
+    flex-shrink: 0;
+    --hue: 0;
+    text-align: center;
+    background-color: hsl(var(--hue), 100%, 70%);
+}
+
+.flex-shrink-itens-1 {
+    flex-basis: 120px;
+    flex-shrink: 1;
+    --hue: 0;
+    text-align: center;
+    background-color: hsl(var(--hue), 100%, 70%);
+}
+
+.flex-shrink-itens-2 {
+    flex-basis: 120px;
+    flex-shrink: 2;
+    --hue: 0;
+    text-align: center;
+    background-color: hsl(var(--hue), 100%, 70%);
+}
+
+/*
+
+Flex shortcut
+
+Keyword value 
+flex: none;  0 0 auto 
+
+One value, unitless number: flex-grow
+flex-basis is then equal to 0%. 
+flex: 2;  2 1 0% 
+
+One value, width/height: flex-basis 
+flex: auto;  1 1 auto 
+flex: 10em;  1 1 10em 
+flex: 30%;
+flex: min-content;
+
+Two values: flex-grow | flex-basis 
+flex: 1 30px;  1 1 30px 
+
+Two values: flex-grow | flex-shrink 
+flex: 2 2;  2 2 0% 
+
+Three values: flex-grow | flex-shrink | flex-basis 
+flex: 2 2 10%;
+
+Global values 
+flex: inherit;
+flex: initial;  0 1 auto 
+flex: revert;
+flex: revert-layer;
+flex: unset;
+
+*/

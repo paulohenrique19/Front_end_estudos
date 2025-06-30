@@ -1,0 +1,139 @@
+h1 {
+    color: blue;
+}
+
+/* Cascading
+    - CSS considera os atributos no estilo cascata, ou seja, o último elemento
+    adicionado tem maior prioridade
+
+    OBS: Cascading só funciona para elementos do mesmo peso
+*/
+
+.cascading p {
+    color: green;
+    color: lightseagreen; /* (1º instância) <------- CSS leva em consideração
+                             o último atributo do mesmo tipo*/
+}
+
+.cascading .cascading-green {
+    color: green; /* (2º instância) <------- CSS leva em consideração
+    o último atributo do mesmo tipo, antes o último elemento adicionado era o da 1º instância*/
+}
+
+/* Especificidade
+
+    - Cada seletor tem um peso
+    - Soma dos pesos faz a declaração ser aplicada
+
+    #id - peso 100
+    .class - peso 10
+    element - peso 1
+
+    Especificidade pode anular o cascading, pois agora o que vale é o elemento
+    com maior peso, e não o último a ser adicionado
+
+    Elementos mais específicos:
+    - style (aplicado em tag HTML)
+    - !important (aplicado no CSS, maior peso de todos)
+
+*/
+
+
+
+.especificidade .green {
+    color: green;
+}
+
+.especificidade #text {
+    color: aqua /* .especificidade #text tem peso (100 de id + 10 de class = 110)*/
+}
+
+.especificidade p {
+    color: yellow
+}
+
+.especificidade p.green#text{
+    color: black; /* .especificidade p.green#text tem maior peso (100 de id + 20 de class
+                    + 1 da tag <p></p>, portanto, será aplicado)*/
+}
+
+/* Tipos de dados, valores, e unidades de medida
+
+    Cada propiedade possui valores: 
+
+    'property: value'
+
+    As propiedades possuem tipos: 
+
+    '<data-type>'
+
+    Passando o mouse na propiedade color, temos a propiedade color mostrando o
+    seu tipo: <color>. E o seu valor: blue 
+
+    Da mesma forma, a propiedade font-size tem os tipos: 
+        <absolute-size> | <relative-size> | <length-percentage>
+
+    
+*/
+
+
+.tipos-de-dados h1 {
+    color: green; /* color */ 
+    font-size: 32px; /* length */
+    letter-spacing: 2; /* number */
+    text-transform: uppercase; /* keyword */
+    text-transform: capitalize; /* keyword */
+}
+
+/* Seletores 
+
+    - type | element | tag
+    - id
+    - class
+    - atributo
+    - universal
+
+    <tag>, #id e .class são seletores
+
+    Seletor universal * {}, asterisco significa que tudo na página terá uma X característica
+
+*/
+
+/* Por atributo da tag*/
+
+.seletores [class="color"] {
+    color: red;
+}
+
+.seletores [title="t"] {
+    color:blue
+}
+
+.seletores [id="text"] {
+    color:blueviolet
+}
+
+/* Combinator
+    - Descendent
+    - List
+    - Next sibling
+    - Child
+*/
+
+.combinators article p { /*combinator por descendencia*/
+    color: red;
+}
+
+.combinators span, mark { /*list ,podemos colocar várias tags e/ou elementos em um código só
+                            separando por virgulas*/
+    color:royalblue;
+}
+
+.combinators article h2 + p { /*next sibling, altera elementos próximos ao elemento modificado*/
+    color: green;
+}
+
+.combinators aside > ul { /*child, pega o primeiro elemento filho de um propriedade
+                            no caso aside e ul, e aplica uma característica somente nele*/
+    margin-top: 60px;
+}

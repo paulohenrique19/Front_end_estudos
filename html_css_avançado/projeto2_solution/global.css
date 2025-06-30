@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --brand-color: #EF5F4C;
+    --background-color: #ffffff;
+    --surface-color: #F5F5F5;
+    --skaleton-color: #d9d9d9;
+    --shape-transparency: #ffffff8f;
+    --text-color-primary: #313131;
+    --text-color-secundary: #6c6c6c;
+
+    --font-family: "Poppins", sans-serif;
+    --text-lg: bold 32px/125% var(--font-family);
+    --text: 16px/1.5 var(--font-family);
+    --text-md: 14px/175% var(--font-family);
+    --text-sm: 12px/175% var(--font-family);
+
+
+}
+
+body {
+    font: var(--text);
+    color: var(--text-color-secundary);
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /*a cor do elemento herda a cor do elemento pai*/
+}
+
+a:hover {
+    color: var(--brand-color);
+    text-decoration: underline;
+}
+
+
+/*aplica um container no projeto definindo um padding lateral, uma largura máxima e uma margin automática para ajuste de item*/
+.container {
+    padding-inline: 32px;
+    max-width: 1280px;
+    margin-inline: auto;
+}
+
+.bg-surface-color {
+    background-color: var(--surface-color);
+}

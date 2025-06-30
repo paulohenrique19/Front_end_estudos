@@ -1,0 +1,19 @@
+# Criação de componentes
+
+Duas situações em que criar componentes é importante
+
+1º: Quando algo se repete várias vezes
+
+2º: Quando conseguimos desaclopar algo de um componente maior, transformando num componente menor facilitando a manutenção de código
+
+
+# Key no react
+
+3 momentos em que um componente é renderizado novamente no react
+
+1. Quando o estado altera;
+2. Quando a propriedade altera;
+3. Quando um componente pai renderiza novamente;
+
+Sempre que atualizar uma informação que depende do valor anterior, é uma 
+boa prática usando o padrão de funções

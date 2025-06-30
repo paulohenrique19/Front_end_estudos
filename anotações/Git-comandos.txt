@@ -1,0 +1,23 @@
+Comandos git para repositório local:
+
+// inicia o git (repositório) no projeto
+git init 
+
+// verifica alterações de pastas e arquivos no projeto
+git status
+
+// adiciona todos os arquivos e pastas modificadas, ao stage area
+git add . (todos os arquivos da pasta)
+git add (nome do arquivo)
+
+// cria e descreve um ponto na história
+git commit -m "message here"
+
+// histórico de commits do projeto
+git log
+
+// vai para o commit escolhido
+git checkout (id do commit parcial ou total)
+
+// retira do stage area
+git restore --staged (nome do arquivo)

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="flexbox.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Introdução CSS flexbox</h1>
+    <div class="container">
+        <div class="container-itens" style="--hue: 0">1</div>
+        <div class="container-itens" style="--hue: 100">2</div>
+        <div class="container-itens" style="--hue: 200">3</div>
+        <div class="container-itens" style="--hue: 300">4</div>
+    </div>
+    <h1>Concepts:</h1>
+    <div class="concepts">
+        <h1>Display Flex</h1>
+        <div class="concepts-display">
+            <div class="concepts-itens" style="--hue: 0">1</div>
+            <div class="concepts-itens" style="--hue: 100">2</div>
+            <div class="concepts-itens" style="--hue: 200">3</div>
+            <div class="concepts-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Flex direction</h1>
+        <div class="concepts-flexdirection">
+            <div class="concepts-itens" style="--hue: 0">1</div>
+            <div class="concepts-itens" style="--hue: 100">2</div>
+            <div class="concepts-itens" style="--hue: 200">3</div>
+            <div class="concepts-itens" style="--hue: 300">4</div>
+        </div>
+    </div>
+    <h1>Justify Content:</h1>
+    <div class="justify-content">
+        <h1>Flex Start e Flex End</h1>
+        <p>Flex end sendo aplicado:</p>
+        <div class="justify-content-flex-start-end">
+            <div class="concepts-itens" style="--hue: 0">1</div>
+            <div class="concepts-itens" style="--hue: 100">2</div>
+            <div class="concepts-itens" style="--hue: 200">3</div>
+            <div class="concepts-itens" style="--hue: 300">4</div>
+        </div>
+        <p>Os elementos começam da ordem 1, 2, 3, 4. (display: flex;) Da esquerda para a direita.
+            Invertendo a direção mas mantendo o eixo com o justify-content: flex-end, temos os itens começando
+            da esquerda para a direita, mas alinhados para a direita, o oposto seria com justify-content: flex-start
+        </p>
+        <h1>Justify-content: center</h1>
+        <p>Alinha os itens no centro</p>
+        <div class="justify-content-center">
+            <div class="concepts-itens" style="--hue: 0">1</div>
+            <div class="concepts-itens" style="--hue: 100">2</div>
+            <div class="concepts-itens" style="--hue: 200">3</div>
+            <div class="concepts-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Justify-content: space-evenly</h1>
+        <p>Aplica espaços constantes entre os elementos e os limites laterais da box</p>
+        <div class="justify-content-evenly">
+            <div class="concepts-itens" style="--hue: 0">1</div>
+            <div class="concepts-itens" style="--hue: 100">2</div>
+            <div class="concepts-itens" style="--hue: 200">3</div>
+            <div class="concepts-itens" style="--hue: 300">4</div>
+        </div>
+        <p>Todos os elementos tem a mesma distancia entre si, e os elementos das laterais
+            tem a mesma distancia entre si junto com a distancia das laterais
+        </p>
+        <h1>Justify-content: space-around</h1>
+        <p>Aplica um espaço ao redor dos elementos</p>
+        <div class="justify-content-around">
+            <div class="concepts-itens" style="--hue: 0">1</div>
+            <div class="concepts-itens" style="--hue: 100">2</div>
+            <div class="concepts-itens" style="--hue: 200">3</div>
+            <div class="concepts-itens" style="--hue: 300">4</div>
+        </div>
+        <p>
+            Todos os elementos entre si tem a mesma distancia, a distancia entre dois elementos é 
+            diferente da distancia entre um elemento da lateral e a sua lateral correspondente
+        </p>
+        <h1>Justify-content: space-between</h1>
+        <p>
+            Aplica um espaço somente entre os elementos, como não existe elementos nas laterais,
+            os elementos laterais são jogados para os limites da box
+        </p>
+        <div class="justify-content-between">
+            <div class="concepts-itens" style="--hue: 0">1</div>
+            <div class="concepts-itens" style="--hue: 100">2</div>
+            <div class="concepts-itens" style="--hue: 200">3</div>
+            <div class="concepts-itens" style="--hue: 300">4</div>
+        </div>
+
+        <h1>Aplicando os mesmos conceitos de justify-content, porém agora com colunas</h1>
+        <h1>Flex Start e Flex End</h1>
+        <p>Flex end sendo aplicado:</p>
+        <p>Laterais agora são trocadas para cima e baixo</p>
+        <div class="justify-content-flex-start-end-column">
+            <div class="concepts-itens" style="--hue: 0">1</div>
+            <div class="concepts-itens" style="--hue: 100">2</div>
+            <div class="concepts-itens" style="--hue: 200">3</div>
+            <div class="concepts-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Justify-content: center</h1>
+        <div class="justify-content-center-column">
+            <div class="concepts-itens" style="--hue: 0">1</div>
+            <div class="concepts-itens" style="--hue: 100">2</div>
+            <div class="concepts-itens" style="--hue: 200">3</div>
+            <div class="concepts-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Justify-content: space-evenly</h1>
+        <div class="justify-content-evenly-column">
+            <div class="concepts-itens" style="--hue: 0">1</div>
+            <div class="concepts-itens" style="--hue: 100">2</div>
+            <div class="concepts-itens" style="--hue: 200">3</div>
+            <div class="concepts-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Justify-content: space-around</h1>
+        <div class="justify-content-around-column">
+            <div class="concepts-itens" style="--hue: 0">1</div>
+            <div class="concepts-itens" style="--hue: 100">2</div>
+            <div class="concepts-itens" style="--hue: 200">3</div>
+            <div class="concepts-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Justify-content: space-between</h1>
+        <div class="justify-content-between-column">
+            <div class="concepts-itens" style="--hue: 0">1</div>
+            <div class="concepts-itens" style="--hue: 100">2</div>
+            <div class="concepts-itens" style="--hue: 200">3</div>
+            <div class="concepts-itens" style="--hue: 300">4</div>
+        </div>
+    </div>
+    <h1>Align itens</h1>
+    <h3>Aplicando width: 20px em todos os elementos</h3>
+    <div class="align-itens-tutorial">
+        <h1>Align-itens: stretch</h1>
+        <p>Por padrão, ele é stretch (esticado)</p>
+        <div class="align-itens-stretch">
+            <div class="align-itens" style="--hue: 0">1</div>
+            <div class="align-itens" style="--hue: 100">2</div>
+            <div class="align-itens" style="--hue: 200">3</div>
+            <div class="align-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Align-itens: flex-start</h1>
+        <p>Posiciona os elementos em cima e esquerda (padrão) além de retirar o esticamento padrão</p>
+        <div class="align-itens-flex-start">
+            <div class="align-itens" style="--hue: 0">1</div>
+            <div class="align-itens" style="--hue: 100">2</div>
+            <div class="align-itens" style="--hue: 200">3</div>
+            <div class="align-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Align-itens: center</h1>
+        <p>Posiciona os itens no centro e esquerda (padrão)</p>
+        <div class="align-itens-center">
+            <div class="align-itens" style="--hue: 0">1</div>
+            <div class="align-itens" style="--hue: 100">2</div>
+            <div class="align-itens" style="--hue: 200">3</div>
+            <div class="align-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Align-itens: flex-end</h1>
+        <p>Posiciona os itens em baixo e esquerda (padrão)</p>
+        <div class="align-itens-flex-end">
+            <div class="align-itens" style="--hue: 0">1</div>
+            <div class="align-itens" style="--hue: 100">2</div>
+            <div class="align-itens" style="--hue: 200">3</div>
+            <div class="align-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Align-itens: baseline</h1>
+        <p>Os elementos são alinhados de acordo com uma linha imaginária que existe entre eles, independente do tamanho</p>
+        <div class="align-itens-baseline">
+            <div class="align-itens" style="--hue: 0; font-size: 20px;">1</div>
+            <div class="align-itens" style="--hue: 100; font-size: 50px;">2</div>
+            <div class="align-itens" style="--hue: 200">3</div>
+            <div class="align-itens" style="--hue: 300; font-size: 30px;">4</div>
+        </div>
+        <p>Os elementos parecem que estão desalinhados, mas na verdade, se olharmos para o texto, percebemos 
+            que estão alinhados.
+        </p>
+        <h1>Aplicando os mesmos conceitos de align-itens, porém agora com colunas</h1>
+        <h1>Align-itens: stretch</h1>
+        <p>Por que não espichou? A solução é usar flex-basis</p>
+        <div class="align-itens-stretch-column">
+            <div class="align-itens" style="--hue: 0">1</div>
+            <div class="align-itens" style="--hue: 100">2</div>
+            <div class="align-itens" style="--hue: 200">3</div>
+            <div class="align-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Align-itens: flex-start</h1>
+        <div class="align-itens-flex-start-column">
+            <div class="align-itens" style="--hue: 0">1</div>
+            <div class="align-itens" style="--hue: 100">2</div>
+            <div class="align-itens" style="--hue: 200">3</div>
+            <div class="align-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Align-itens: center</h1>
+        <div class="align-itens-center-column">
+            <div class="align-itens" style="--hue: 0">1</div>
+            <div class="align-itens" style="--hue: 100">2</div>
+            <div class="align-itens" style="--hue: 200">3</div>
+            <div class="align-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Align-itens: flex-end</h1>
+        <div class="align-itens-flex-end-column">
+            <div class="align-itens" style="--hue: 0">1</div>
+            <div class="align-itens" style="--hue: 100">2</div>
+            <div class="align-itens" style="--hue: 200">3</div>
+            <div class="align-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Align-itens: baseline</h1>
+        <div class="align-itens-baseline-column">
+            <div class="align-itens" style="--hue: 0; font-size: 20px;">1</div>
+            <div class="align-itens" style="--hue: 100; font-size: 50px;">2</div>
+            <div class="align-itens" style="--hue: 200">3</div>
+            <div class="align-itens" style="--hue: 300; font-size: 30px;">4</div>
+        </div>
+    </div>
+    <h1>Gap e Margin</h1>
+    <div class="gap-margin">
+        <h1>Gap</h1>
+        <p>Gap é o espaço entre os elementos, pode ser relativo, fixo ou flexível </p>
+        <div class="gap">
+            <div class="align-itens" style="--hue: 0">1</div>
+            <div class="align-itens" style="--hue: 100">2</div>
+            <div class="align-itens" style="--hue: 200">3</div>
+            <div class="align-itens" style="--hue: 300">4</div>
+        </div>
+        <h1>Margin auto</h1>
+        <p>Aplica uma margin automática para os elementos, ajudando o ajuste de espaçamento
+            e alinhamento dos elementos
+        </p>
+        <div class="margin">
+            <div class="align-itens" style="--hue: 0; margin-top: auto;">1</div>
+            <div class="align-itens" style="--hue: 100; margin-bottom: auto;">2</div>
+            <div class="align-itens" style="--hue: 200">3</div>
+            <div class="align-itens" style="--hue: 300; margin-left: auto;">4</div>
+        </div>
+    </div>
+    <h1>Multi Line e Flex-Wrap</h1>
+    <div class="multi-line">
+        <h1>Flex-wrap: wrap (embrulhamento)</h1>
+        <p>Cada elemento dentro da box tem uma largura específica, flex-wrap: wrap permite que
+            quando um elemento ultrapasse a largura máxima da linha e/ou do espaço permitido entre elementos
+            , ele será jogado para a linha de baixo automaticamente
+        </p>
+        <p>Por padrão, ele é flex-wrap: nowrap</p>
+        <div class="flex-wrap">
+            <div class="flex-wrap-itens" style="--hue: 0">1</div>
+            <div class="flex-wrap-itens" style="--hue: 100">2</div>
+            <div class="flex-wrap-itens" style="--hue: 200">3</div>
+            <div class="flex-wrap-itens" style="--hue: 300">4</div>
+            <div class="flex-wrap-itens" style="--hue: 400">5</div>
+            <div class="flex-wrap-itens" style="--hue: 500">6</div>
+            <div class="flex-wrap-itens" style="--hue: 600">7</div>
+            <div class="flex-wrap-itens" style="--hue: 700">8</div>
+            <div class="flex-wrap-itens" style="--hue: 800">9</div>
+            <div class="flex-wrap-itens" style="--hue: 900">10</div>
+            <div class="flex-wrap-itens" style="--hue: 1000">11</div>
+            <div class="flex-wrap-itens" style="--hue: 1100">12</div>
+        </div>
+        <h1>Flex-wrap: wrap-reverse</h1>
+        <p>Wrap, mas agora inverte a ordem dos itens disponibilizados</p>
+        <div class="flex-wrap-reverse">
+            <div class="flex-wrap-itens" style="--hue: 0">1</div>
+            <div class="flex-wrap-itens" style="--hue: 100">2</div>
+            <div class="flex-wrap-itens" style="--hue: 200">3</div>
+            <div class="flex-wrap-itens" style="--hue: 300">4</div>
+            <div class="flex-wrap-itens" style="--hue: 400">5</div>
+            <div class="flex-wrap-itens" style="--hue: 500">6</div>
+            <div class="flex-wrap-itens" style="--hue: 600">7</div>
+            <div class="flex-wrap-itens" style="--hue: 700">8</div>
+            <div class="flex-wrap-itens" style="--hue: 800">9</div>
+            <div class="flex-wrap-itens" style="--hue: 900">10</div>
+            <div class="flex-wrap-itens" style="--hue: 1000">11</div>
+            <div class="flex-wrap-itens" style="--hue: 1100">12</div>
+        </div>
+        <h1>Align-content</h1>
+        <p>Quando usamos o flex-wrap, a propriedade align-content é desbloqueada</p>
+        <p>Agora alinhamos com align-content, que terá prioridade sobre align-itens</p>
+        <h1>Align-content: flex-start</h1>
+        <div class="align-content-flex-start">
+            <div class="flex-wrap-itens" style="--hue: 0">1</div>
+            <div class="flex-wrap-itens" style="--hue: 100">2</div>
+            <div class="flex-wrap-itens" style="--hue: 200">3</div>
+            <div class="flex-wrap-itens" style="--hue: 300">4</div>
+            <div class="flex-wrap-itens" style="--hue: 400">5</div>
+            <div class="flex-wrap-itens" style="--hue: 500">6</div>
+            <div class="flex-wrap-itens" style="--hue: 600">7</div>
+            <div class="flex-wrap-itens" style="--hue: 700">8</div>
+            <div class="flex-wrap-itens" style="--hue: 800">9</div>
+            <div class="flex-wrap-itens" style="--hue: 900">10</div>
+            <div class="flex-wrap-itens" style="--hue: 1000">11</div>
+            <div class="flex-wrap-itens" style="--hue: 1100">12</div>
+        </div>        
+        <h1>Align-content: center</h1>
+        <div class="align-content-center">
+            <div class="flex-wrap-itens" style="--hue: 0">1</div>
+            <div class="flex-wrap-itens" style="--hue: 100">2</div>
+            <div class="flex-wrap-itens" style="--hue: 200">3</div>
+            <div class="flex-wrap-itens" style="--hue: 300">4</div>
+            <div class="flex-wrap-itens" style="--hue: 400">5</div>
+            <div class="flex-wrap-itens" style="--hue: 500">6</div>
+            <div class="flex-wrap-itens" style="--hue: 600">7</div>
+            <div class="flex-wrap-itens" style="--hue: 700">8</div>
+            <div class="flex-wrap-itens" style="--hue: 800">9</div>
+            <div class="flex-wrap-itens" style="--hue: 900">10</div>
+            <div class="flex-wrap-itens" style="--hue: 1000">11</div>
+            <div class="flex-wrap-itens" style="--hue: 1100">12</div>
+        </div>   
+        <h1>Align-content: flex-end</h1>
+        <div class="align-content-flex-end">
+            <div class="flex-wrap-itens" style="--hue: 0">1</div>
+            <div class="flex-wrap-itens" style="--hue: 100">2</div>
+            <div class="flex-wrap-itens" style="--hue: 200">3</div>
+            <div class="flex-wrap-itens" style="--hue: 300">4</div>
+            <div class="flex-wrap-itens" style="--hue: 400">5</div>
+            <div class="flex-wrap-itens" style="--hue: 500">6</div>
+            <div class="flex-wrap-itens" style="--hue: 600">7</div>
+            <div class="flex-wrap-itens" style="--hue: 700">8</div>
+            <div class="flex-wrap-itens" style="--hue: 800">9</div>
+            <div class="flex-wrap-itens" style="--hue: 900">10</div>
+            <div class="flex-wrap-itens" style="--hue: 1000">11</div>
+            <div class="flex-wrap-itens" style="--hue: 1100">12</div>
+        </div>  
+        <h1>Align-content: space-around</h1>
+        <div class="align-content-space-around">
+            <div class="flex-wrap-itens" style="--hue: 0">1</div>
+            <div class="flex-wrap-itens" style="--hue: 100">2</div>
+            <div class="flex-wrap-itens" style="--hue: 200">3</div>
+            <div class="flex-wrap-itens" style="--hue: 300">4</div>
+            <div class="flex-wrap-itens" style="--hue: 400">5</div>
+            <div class="flex-wrap-itens" style="--hue: 500">6</div>
+            <div class="flex-wrap-itens" style="--hue: 600">7</div>
+            <div class="flex-wrap-itens" style="--hue: 700">8</div>
+            <div class="flex-wrap-itens" style="--hue: 800">9</div>
+            <div class="flex-wrap-itens" style="--hue: 900">10</div>
+            <div class="flex-wrap-itens" style="--hue: 1000">11</div>
+            <div class="flex-wrap-itens" style="--hue: 1100">12</div>
+        </div>
+        <h1>Align-content: space-between</h1>
+        <div class="align-content-space-between">
+            <div class="flex-wrap-itens" style="--hue: 0">1</div>
+            <div class="flex-wrap-itens" style="--hue: 100">2</div>
+            <div class="flex-wrap-itens" style="--hue: 200">3</div>
+            <div class="flex-wrap-itens" style="--hue: 300">4</div>
+            <div class="flex-wrap-itens" style="--hue: 400">5</div>
+            <div class="flex-wrap-itens" style="--hue: 500">6</div>
+            <div class="flex-wrap-itens" style="--hue: 600">7</div>
+            <div class="flex-wrap-itens" style="--hue: 700">8</div>
+            <div class="flex-wrap-itens" style="--hue: 800">9</div>
+            <div class="flex-wrap-itens" style="--hue: 900">10</div>
+            <div class="flex-wrap-itens" style="--hue: 1000">11</div>
+            <div class="flex-wrap-itens" style="--hue: 1100">12</div>
+        </div>
+        <h1>Align-content: space-evenly</h1>
+        <div class="align-content-space-evenly">
+            <div class="flex-wrap-itens" style="--hue: 0">1</div>
+            <div class="flex-wrap-itens" style="--hue: 100">2</div>
+            <div class="flex-wrap-itens" style="--hue: 200">3</div>
+            <div class="flex-wrap-itens" style="--hue: 300">4</div>
+            <div class="flex-wrap-itens" style="--hue: 400">5</div>
+            <div class="flex-wrap-itens" style="--hue: 500">6</div>
+            <div class="flex-wrap-itens" style="--hue: 600">7</div>
+            <div class="flex-wrap-itens" style="--hue: 700">8</div>
+            <div class="flex-wrap-itens" style="--hue: 800">9</div>
+            <div class="flex-wrap-itens" style="--hue: 900">10</div>
+            <div class="flex-wrap-itens" style="--hue: 1000">11</div>
+            <div class="flex-wrap-itens" style="--hue: 1100">12</div>
+        </div>
+        
+
+
+
+        <h1>Wrap com align-itens: flex-start</h1>
+        <div class="flex-wrap-align-itens-flex-start">
+            <div class="flex-wrap-itens" style="--hue: 0">1</div>
+            <div class="flex-wrap-itens" style="--hue: 100">2</div>
+            <div class="flex-wrap-itens" style="--hue: 200">3</div>
+            <div class="flex-wrap-itens" style="--hue: 300">4</div>
+            <div class="flex-wrap-itens" style="--hue: 400">5</div>
+            <div class="flex-wrap-itens" style="--hue: 500">6</div>
+            <div class="flex-wrap-itens" style="--hue: 600">7</div>
+            <div class="flex-wrap-itens" style="--hue: 700">8</div>
+            <div class="flex-wrap-itens" style="--hue: 800">9</div>
+            <div class="flex-wrap-itens" style="--hue: 900">10</div>
+            <div class="flex-wrap-itens" style="--hue: 1000">11</div>
+            <div class="flex-wrap-itens" style="--hue: 1100">12</div>
+        </div>
+        <h1>Wrap com align-itens: center</h1>
+        <div class="flex-wrap-align-itens-center">
+            <div class="flex-wrap-itens" style="--hue: 0">1</div>
+            <div class="flex-wrap-itens" style="--hue: 100">2</div>
+            <div class="flex-wrap-itens" style="--hue: 200">3</div>
+            <div class="flex-wrap-itens" style="--hue: 300">4</div>
+            <div class="flex-wrap-itens" style="--hue: 400">5</div>
+            <div class="flex-wrap-itens" style="--hue: 500">6</div>
+            <div class="flex-wrap-itens" style="--hue: 600">7</div>
+            <div class="flex-wrap-itens" style="--hue: 700">8</div>
+            <div class="flex-wrap-itens" style="--hue: 800">9</div>
+            <div class="flex-wrap-itens" style="--hue: 900">10</div>
+            <div class="flex-wrap-itens" style="--hue: 1000">11</div>
+            <div class="flex-wrap-itens" style="--hue: 1100">12</div>
+        </div>
+        <h1>Wrap com align-itens: flex-end</h1>
+        <div class="flex-wrap-align-itens-flex-end">
+            <div class="flex-wrap-itens" style="--hue: 0">1</div>
+            <div class="flex-wrap-itens" style="--hue: 100">2</div>
+            <div class="flex-wrap-itens" style="--hue: 200">3</div>
+            <div class="flex-wrap-itens" style="--hue: 300">4</div>
+            <div class="flex-wrap-itens" style="--hue: 400">5</div>
+            <div class="flex-wrap-itens" style="--hue: 500">6</div>
+            <div class="flex-wrap-itens" style="--hue: 600">7</div>
+            <div class="flex-wrap-itens" style="--hue: 700">8</div>
+            <div class="flex-wrap-itens" style="--hue: 800">9</div>
+            <div class="flex-wrap-itens" style="--hue: 900">10</div>
+            <div class="flex-wrap-itens" style="--hue: 1000">11</div>
+            <div class="flex-wrap-itens" style="--hue: 1100">12</div>
+        </div>
+    </div>
+    <h1>Sizing: Flex Basis, Flex Grow e Flex Shrink</h1>
+    <div class="flex-properties">
+        <h1>Flex Basis</h1>
+        <p>Tamanho do item relativo ao eixo principal da disposição de itens, se o eixo for invertido, os itens serão dispostos de forma invertida</p>
+        <p>Pode assumir altura ou largura, tudo depende da disposição dos itens</p>
+        <p>Adapta o tamanho do container para atender a altura ou largura dos itens</p>
+        <div class="flex-properties-flex-basis">
+            <div class="flex-basis-itens" style="--hue: 0">1</div>
+            <div class="flex-basis-itens" style="--hue: 100">2</div>
+            <div class="flex-basis-itens" style="--hue: 200">3</div>
+            <div class="flex-basis-itens" style="--hue: 300">4</div>
+            <div class="flex-basis-itens" style="--hue: 400">5</div>
+            <div class="flex-basis-itens" style="--hue: 500">6</div>
+            <div class="flex-basis-itens" style="--hue: 600">7</div>
+            <div class="flex-basis-itens" style="--hue: 700">8</div>
+            <div class="flex-basis-itens" style="--hue: 800">9</div>
+            <div class="flex-basis-itens" style="--hue: 900">10</div>
+            <div class="flex-basis-itens" style="--hue: 1000">11</div>
+            <div class="flex-basis-itens" style="--hue: 1100">12</div>
+        </div>
+        <h1>Flex Grow</h1>
+        <p>Crescimento automático do item na box e a distribuição desse item conforme os espaços vazios</p>
+        <p>flex-grow: 1</p>
+        <p>Faz com que todos os itens tenham uma proporção de tamanho igual distribuidos pelos espaços vazios</p>
+        <div class="flex-properties-flex-grow">
+            <div class="flex-grow-itens" style="--hue: 0">1</div>
+            <div class="flex-grow-itens" style="--hue: 100">2</div>
+            <div class="flex-grow-itens" style="--hue: 200">3</div>
+            <div class="flex-grow-itens" style="--hue: 300">4</div>
+            <div class="flex-grow-itens" style="--hue: 400">5</div>
+            <div class="flex-grow-itens" style="--hue: 500">6</div>
+            <div class="flex-grow-itens" style="--hue: 600">7</div>
+            <div class="flex-grow-itens" style="--hue: 700">8</div>
+            <div class="flex-grow-itens" style="--hue: 800">9</div>
+            <div class="flex-grow-itens" style="--hue: 900">10</div>
+            <div class="flex-grow-itens" style="--hue: 1000">11</div>
+            <div class="flex-grow-itens" style="--hue: 1100">12</div>
+        </div>
+        <h2>Aplicando flex-grow: 2 no item 6</h2>
+        <p>O tamanho do item 6 terá o dobro do tamanho de cada um dos outros itens</p>
+        <p>O tamanho dos outros itens diminuirão para atender a demanda de espaço do item 6</p>
+        <div class="flex-properties-flex-grow">
+            <div class="flex-grow-itens" style="--hue: 0">1</div>
+            <div class="flex-grow-itens" style="--hue: 100">2</div>
+            <div class="flex-grow-itens" style="--hue: 200">3</div>
+            <div class="flex-grow-itens" style="--hue: 300">4</div>
+            <div class="flex-grow-itens" style="--hue: 400">5</div>
+            <div class="flex-grow-itens-2" style="--hue: 500">6</div>
+            <div class="flex-grow-itens" style="--hue: 600">7</div>
+            <div class="flex-grow-itens" style="--hue: 700">8</div>
+            <div class="flex-grow-itens" style="--hue: 800">9</div>
+            <div class="flex-grow-itens" style="--hue: 900">10</div>
+            <div class="flex-grow-itens" style="--hue: 1000">11</div>
+            <div class="flex-grow-itens" style="--hue: 1100">12</div>
+        </div>
+        <h1>Flex Shrink</h1>
+        <p>Uma propriedade que permite o encolhimento automático dos itens vistos no Flex Basis e Flex Grow</p>
+        <p>Inserindo flex-shrink: 0, removemos o encolhimento automático</p>
+        <p>Inserimos flex-basis: 200px, como flex-shrink está com 0, então os itens ultrapassam a borda sem encolhimento automático</p>
+        <p>Por padrão, flex-shrink já vem como 1</p>
+        <p>flex-shrink pode assumir valores quebrados e menores que 1</p>
+        <div class="flex-properties-flex-shrink">
+            <div class="flex-shrink-itens" style="--hue: 0">1</div>
+            <div class="flex-shrink-itens" style="--hue: 100">2</div>
+            <div class="flex-shrink-itens" style="--hue: 200">3</div>
+            <div class="flex-shrink-itens" style="--hue: 300">4</div>
+            <div class="flex-shrink-itens" style="--hue: 400">5</div>
+            <div class="flex-shrink-itens" style="--hue: 500">6</div>
+            <div class="flex-shrink-itens" style="--hue: 600">7</div>
+            <div class="flex-shrink-itens" style="--hue: 700">8</div>
+            <div class="flex-shrink-itens" style="--hue: 800">9</div>
+            <div class="flex-shrink-itens" style="--hue: 900">10</div>
+            <div class="flex-shrink-itens" style="--hue: 1000">11</div>
+            <div class="flex-shrink-itens" style="--hue: 1100">12</div>
+        </div>
+        <h2>Podemos aplicar um encolhimento mais específico em um item</h2>
+        <div class="flex-properties-flex-shrink">
+            <div class="flex-shrink-itens-1" style="--hue: 0">1</div>
+            <div class="flex-shrink-itens-1" style="--hue: 100">2</div>
+            <div class="flex-shrink-itens-1" style="--hue: 200">3</div>
+            <div class="flex-shrink-itens-1" style="--hue: 300">4</div>
+            <div class="flex-shrink-itens-1" style="--hue: 400">5</div>
+            <div class="flex-shrink-itens-2" style="--hue: 500">6</div>
+            <div class="flex-shrink-itens-1" style="--hue: 600">7</div>
+            <div class="flex-shrink-itens-1" style="--hue: 700">8</div>
+            <div class="flex-shrink-itens-1" style="--hue: 800">9</div>
+            <div class="flex-shrink-itens-1" style="--hue: 900">10</div>
+            <div class="flex-shrink-itens-1" style="--hue: 1000">11</div>
+            <div class="flex-shrink-itens-1" style="--hue: 1100">12</div>
+        </div>
+        <h1>Order: Altera a ordem de um item</h1>
+        <p>Aplicando order: -1 no 6 e jogando-o para a primeira posição</p>
+        <p>Aplicando order: 1 no 4 e jogando-o para a última posição</p>
+        <div class="flex-properties-flex-grow">
+            <div class="flex-grow-itens" style="--hue: 0">1</div>
+            <div class="flex-grow-itens" style="--hue: 100">2</div>
+            <div class="flex-grow-itens" style="--hue: 200">3</div>
+            <div class="flex-grow-itens" style="--hue: 300; order: 1;">4</div>
+            <div class="flex-grow-itens" style="--hue: 400">5</div>
+            <div class="flex-grow-itens" style="--hue: 500; order: -1;">6</div>
+            <div class="flex-grow-itens" style="--hue: 600">7</div>
+            <div class="flex-grow-itens" style="--hue: 700">8</div>
+            <div class="flex-grow-itens" style="--hue: 800">9</div>
+            <div class="flex-grow-itens" style="--hue: 900">10</div>
+            <div class="flex-grow-itens" style="--hue: 1000">11</div>
+            <div class="flex-grow-itens" style="--hue: 1100">12</div>
+        </div>
+        <h1>Revisão e propriedades extras</h1>
+        <h2>Propriedades que aplicamos no container</h2>
+        <ul>
+            <li>display</li>
+            <li>flex-flow: shorthand para os de baixo</li>
+            <ul>
+                <li>flex-direction</li>
+                <li>flex-wrap</li>
+            </ul>
+            <li>gap: shorthand para row-gap e column-gap</li>
+            <ul>
+                <li>row-gap: espaço entre linhas</li>
+                <li>column-gap: espaço entre colunas</li>
+            </ul>
+            <li>justify-content</li>
+            <li>align-items</li>
+            <li>align-content</li>
+        </ul>
+
+        <h2>Propriedades que aplicamos no child</h2>
+        <ul>
+            <li>flex</li>
+            <li>flex-grow</li>
+            <li>flex-shrink</li>
+            <li>flex-basis</li>
+            <li>align-self: útil para alinhar elementos (flex-start,end,flex-end)</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,221 @@
+/*Position
+
+Serve para posicionar elementos no layout, por padrão, position é estático (static)
+
+Temos alguns tipos de position: 
+
+static
+
+
+relative: o deslocamento é relativo a si mesmo, permite stacking context (empilhamento) e respeita o normal flow
+
+
+absolute: 
+    -fica em um determinado local da tela relativo ao containing block próximo ou initial 
+    -não respeita o normal flow 
+    -permite stacking context
+
+
+fixed: 
+    -fica fixo na tela relativo SOMENTE ao contaning block initial
+    -não respeita o normal flow 
+    -permite stacking context
+
+
+sticky: 
+    -relativo e fixo, é relativo ao elemento pai que tenha mecanismo de scroll, 
+    ou um overflow mais PRÓXIMO
+    -respeita o normal flow
+    -permite stacking context
+
+
+Ao aplicar position: "tipo" no elemento, desbloqueamos algumas propriedades: 
+
+top, bottom (auto explicativo)
+left, right (auto explicativo)
+inset: 
+    -shortcut para aplicar deslocamento em todas as direções
+
+z-index:
+    -aplica stacking context fazendo o elemento ficar acima ou abaixo de outro
+
+Essas propriedades definem o deslocamento do elemento no layout
+
+*/
+
+
+.position-test div {
+    background-color: black;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+.position-test section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid;
+}
+
+.position-test .position-test-relative .position {
+    background-color: red;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    z-index: -1; /*aplicando stacking context, o elemento vermelho ficará em baixo do preto*/
+}
+
+/*Explicação do containing block do position: absolute
+
+    Abaixo na classe da section .position-test .position-test-absolute {},
+    temos a propriedade position: relative ou qualquer outra que não seja static, isso
+    quer dizer que aplicamos um contaning block na section, sem ser o initial que está por 
+    default. 
+    
+    Então o elemento vermelho que está dentro
+    da section e que tem position: absolute, se deslocará DENTRO do containing block mais 
+    próximo que está aplicado
+    em .position-test .position-test-absolute, tendo sua posição absoluta nos limites do
+    containing block
+
+    Se não tivesse o position: (qualquer um menos o static) em .position-test .position-test-absolute,
+    o deslocamento do elemento vermelho seria no containing block inicial podendo ter um 
+    deslocamento fora dos limites da section
+
+
+    Geralmente quando position: absolute é usado em algum elemento, 
+    ele é relativo a algum outro elemento/lugar
+    ou containing block mais próximo que o elemento está dentro
+
+
+*/
+
+.position-test .position-test-absolute {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid;
+}
+
+.position-test .position-test-absolute .position {
+    background-color: red;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: -1;
+}
+
+.position-test .position-test-fixed {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid;
+}
+
+.position-test .position-test-fixed .position {
+    background-color: red;
+    position: fixed;
+    bottom: 5%;
+    left: 95%;
+    z-index: -1;
+}
+
+.position-test .position-test-sticky {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 1px solid;
+    overflow: scroll; /*adiciona scroll no elemento*/
+    height: 130px;
+}
+
+.position-test .position-test-sticky .position {
+    background-color: red;
+    position: sticky;
+    z-index: auto;
+    top: 20px;
+}
+
+
+/*Variáveis CSS*/
+
+/*podemos criar variáveis com atribuições globais*/
+:root {
+    --bg-color: lightblue;
+}
+
+body {
+
+    /*podemos criar variáveis com atribuições dentro de um elemento
+    , mais específico do que ":root" */
+    --bg-color: lightgreen;
+    background-color: var(--bg-color);
+}
+
+.pseudo-class-and-elements-test div {
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+    margin-top: 4px;
+    text-align: center;
+    line-height: 250%;
+}
+
+/*hover, interação do usuário*/
+.pseudo-class-and-elements-test div:hover {
+    background-color: aqua;
+}
+
+/*not(), faz alguma alteração em algum elemento que NÃO TENHA determinada classe
+
+Ex: Abaixo estamos colocando a cor lightcoral nos elementos que não possuem a classe: "nao"
+
+*/
+.pseudo-class-and-elements-test div:not(.nao) {
+    background-color: lightcoral;
+}
+
+/*has(), aplica uma alteração em um elemento que atenda determinada propriedade,
+
+Ex: abaixo estamos aplicando uma borda vermelha de 1px na section que tenha
+uma div com o recurso hover, logo, quando passar o mouse por cima dela, 
+a borda irá aparecer ao redor da section 
+
+*/
+.pseudo-class-and-elements-test section:has(div:hover) {
+    border: 1px solid red;
+}
+
+/*nth-child() aplica uma determinada caracterísica em um elemento baseado na ordem da 
+estrutura*/
+
+.pseudo-class-and-elements-test div:nth-child(3){
+    background-color: blueviolet;
+}
+
+/*Pseudo-elements (first-letter)
+    Altera primeira letra de um elemento
+*/
+
+.pseudo-class-and-elements-test div::first-letter {
+    font-size: 30px;
+}
+
+/*Pseudo-elements before/after
+
+before: adiciona algo antes do conteúdo
+after: adiciona algo após o conteúdo
+
+
+
+*/
+
+.pseudo-class-and-elements-test div::before {
+    content: "0"; /*adicionando conteúdo no início do elemento*/
+    text-decoration: underline;
+}
+
+.pseudo-class-and-elements-test div::after {
+    content: "9"; /*adicionando conteúdo no final do elemento*/
+    text-decoration: underline;
+}

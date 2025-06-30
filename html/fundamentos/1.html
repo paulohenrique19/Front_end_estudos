@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teste</h1>
+    <br/>
+    <p>Lorem ipsum &nbsp; &nbsp; &nbsp; &nbsp; <!--Inserção de espaço &nbsp; --> dolor sit amet consectetur adipisicing elit. 
+        Quibusdam sunt architecto vel! 
+        <br> <!--Quebra de linha <br> -->
+    </p> 
+    <!--Quebra de linha por parágrafos <p></p>  -->
+    <p> Quas maiores perferendis iure eveniet 
+        quasi aperiam ipsam quo, possimus accusamus id ducimus repellat
+        , dicta voluptas amet necessitatibus.</p>
+
+
+    <!--
+    Algumas tags são inline (conteúdos disponibilizados na mesma linha) e outras por blocos, ex:
+    <a></a> (inline)
+    <p></p> (blocos)
+    
+    -->
+
+    <!-- <em></em> destaca o texto  
+         <strong></strong> coloca o texto em negrito  
+         <mark></mark> coloca um marcador no texto
+         <s></s> risca o resto-->
+    <p>Lorem ipsum dolor, sit amet <em>consectetur</em> adipisicing elit. 
+        <s>Hic alias molestias</s> ea <strong>fugit</strong> <mark> ducimus, ipsa pariatur exercitationem esse quaerat odit tempora animi.</mark>  
+        Culpa illo excepturi eligendi quam illum, perspiciatis cupiditate.</p>
+
+    <!--Caracteres reservados-->
+    <p>
+        <!-- &lt < seta a esquerda e &gt > seta a direita -->
+        &lt;p&gt;
+        <br>
+        <code> <!-- <code></code> formado de texto diferente -->
+            &lt;p&gt;
+            &amp;gt; <!-- &amp = & -->
+        </code>
+    </p>
+    <!--Atributos (as tags podem possuir atributos)-->
+    <p> 
+        <!--src (caminho da conteúdo) alt (descrição do conteúdo)-->
+        <img src="" alt="">
+        <!--href (referencia para um link ou conteúdo da página)-->
+        <!--title (título do elemento)-->
+        <a href="https://google.com" title="link">Link</a>
+    </p>
+
+    <!--Atributos booleanos (não precisam de conteúdo)-->
+    <h1 hidden>Texto</h1> <!--hidden (esconde elemento da página)-->
+
+    <!--id-->
+    <div id="nome-1"></div>
+    <div id="nome-2"></div>
+
+    <!--class (classes podem ter espaços no nome)-->
+    <div class="produto calçado">tenis</div>
+    <div class="produto camisas">camiseta</div>
+
+    <!-- data-* (*= alguma coisa) 
+        Serve para pegar o conteúdo da tag com algum nome personalizado 
+    -->
+    <div data-idnumber="1234"></div>
+    
+    <!--style (serve para aplicar CSS na tag diretamente)-->
+    <div style="color: blue;">Teste</div>
+
+    <!--Títulos e parágrafos-->
+    <h1>Título</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+    <h2>Descrição</h2>
+    <p>Descrição simples</p>
+
+    <!--Lista não ordenada <ul> -->
+    <h1>Lista não ordenada</h1>
+    <h2>Items</h2>
+    <ul>
+        <li>Item 1</li>
+        
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <!--Lista ordenada <ol> -->
+    <h1>Lista ordenada</h1>
+    <h2>Items</h2>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    <!--Representação de código em HTML-->
+    <!-- <pre> serve para o HTML reconhecer espaços e quebras de linha como itens válidos a 
+        serem considerados na formatação do código-->
+    <h1>Representação de código em HTML</h1>
+    <pre>
+        <code>
+            if (a = 10)
+            {
+                function()
+            } else {
+                anoter_function()
+            }
+        </code>
+    </pre>
+
+    <!--Hiperlink-->
+
+    <!--Fragmentos (navegar pela mesma página)-->
+    <a href="#desc">Ir para descrição</a>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div id="desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+        Enim veritatis obcaecati illo aliquid earum!
+         Nihil facere mollitia dolorum voluptas voluptates ea distinctio. 
+         Est eaque assumenda sequi ipsam non accusamus voluptatem?</div>
+
+    
+    <div>
+        <!-- target="_blank" abre página em outra aba-->
+        <a href="https://google.com" target="_blank">Abre página em outra aba</a>
+    </div>
+
+    <!-- Imagens -->
+    <img 
+        src="imagem.PNG" 
+        alt="imagem teste" 
+        width="200"
+        height="200"
+    >
+
+    <!-- Recaptulando algumas tags -->
+    <!--                            
+
+        <header></header> (conteúdo HTML que fica no topo da página)
+        <main></main> (conteúdo HTML principal)
+        <aside></aside> (conteúdo HTML secundário)
+        <footer></footer> (conteúdo final da página)    
+
+        <div></div> (tag genérica que separa conteúdo HTML por blocos)
+        <span></span> (tag genérica que coloca conteúdo HTML na mesma linha)
+    
+    -->
+
+    <!-- nav: tag HTML geralmente usada para navegação -->
+    <nav>
+        <a href="">Items</a>
+
+        <ul>
+            <li>home</li>
+            <li>projetos</li>
+            <li>contato</li>
+        </ul>
+
+    </nav>
+
+    <!-- section: por definição é usada para colocar conteúdo separado da página
+        geralmente vai dentro de <aside></aside> -->
+    <section id="home">
+        <h2>Home</h2>
+    </section>
+    <section id="projetos">
+        <h2>Projetos</h2>
+    </section>
+    <section id="contato">
+        <h2>Contato</h2>
+    </section>
+
+    <!-- article: geralmente usada para criar "artigos" -->
+     <article>
+        <h1>Título</h1>
+        <h2>Subtítulos</h2>
+     </article>    
+
+</body>
+</html>

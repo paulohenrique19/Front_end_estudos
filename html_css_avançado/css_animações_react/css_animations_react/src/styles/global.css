@@ -1,0 +1,24 @@
+.f-1 {
+    font-size: 1.5rem;
+}
+
+.m-2 {
+    margin-top: 2rem;
+}
+
+.py-2 {
+    padding-block: 2rem;
+}
+
+.flex-to-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.g-0\.5 {
+    gap: .5rem;
+}
+
+.px-1 {
+    padding-inline: 2rem;
+}

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="grid.css">
+</head>
+<body>
+    <h1>CSS Grid: Introdução</h1>
+    <p>Toda grid é composta de 2 principais grupos:</p>
+    <p>'container: o pai' e 'itens: o(s) filhos'</p>
+
+    <h2>Container (pai)</h2>
+    <p>-display: grid</p>
+    <p>-grid-template:</p>
+    <ul>
+        <li>grid-template-columns;</li>
+        <li>grid-template-rows;</li>
+        <li>grid-template-areas;</li>
+    </ul>
+    <h2>Itens (filhos)</h2>
+    <p>-grid-column</p>
+    <ul>
+        <li>-grid-column-start;</li>
+        <li>-grid-column-end;</li>
+    </ul>
+    <p>-grid-row;</p>
+    <ul>
+        <li>-grid-row-start;</li>
+        <li>-grid-row-end;</li>
+    </ul>
+
+    <div id="app">
+        <div>1</div>
+        <span>2</span>
+        <span>3</span>
+    </div>
+    <p>Primeiras impressões: temos uma div e dois spans, logo, o 1
+        deve estar em cima do 2 e do 3, o 2 e 3 estão na mesma linha,
+        aplicando o display:grid na div em id="app", todos os elementos são empilhados
+    </p>
+    <h1>Grid-template</h1>
+    <p>Shorthand para grid-template-columns</p>
+    <p>Shorthand para grid-template-rows</p>
+    <p>Shorthand para grid-template-areas</p>
+
+    <h2>grid-template-columns</h2>
+    <p>Aumenta o tamanho da largura??</p>
+    <p>Separamos o conteúdo em "caixas" alinhadas e definimos o espaço ocupado por cada um deles</p>
+
+    <p>Aqui estamos definindo grid-template-columns: 1fr 1fr 1fr; logo, cada um dos 3 itens terá uma fração da linha ocupada</p>
+
+    <div id="grid-template-columns">
+        <div>1</div>
+        <span>2</span>
+        <span>3</span>
+    </div>
+    <p>Aplicando tamanhos diferentes para os itens:</p>
+    <p>grid-template-columns: 200px 100px 50px;</p>
+    <p><strong>*não é certeiro:*</strong> Se aplicassemos somente grid-template-columns: 200px; o display dos itens seria block, então temos que aplicar para todos</p>
+    <div id="grid-template-columns-2">
+        <div>1</div>
+        <span>2</span>
+        <span>3</span>
+    </div>
+    <p>Aplicando repetição de itens na linha:</p>
+    <p>grid-template-columns: repeat(3, 1fr) | primeiro escopo: nº de elementos por linha (3), segundo escopo: tamanho dos elementos (1fr)</p>
+    <div id="grid-template-columns-3">
+        <div>1</div>
+        <span>2</span>
+        <span>3</span>
+    </div>
+    <p>O que acontece se aplicar um número maior de repetição para um número menor disponível de elementos?</p>
+    <p>Aplicando grid-template-columns: repeat(6, 1fr) para 3 itens</p>
+    <p>Como temos 3 itens e aplicamos 6 repetições, os itens ocupam metade da linha (3/6) = 50%, porque o CSS espera que colocamos mais 3 itens para ocupá-la inteira</p>
+    <div id="grid-template-columns-4">
+        <div>1</div>
+        <span>2</span>
+        <span>3</span>
+    </div>
+    <p>Colocando mais um item</p>
+    <div id="grid-template-columns-4">
+        <div>1</div>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+    <p>O que acontece se aplicae um número menor de repetição para um número maior disponível de elementos?</p>
+    <p>Aplicando grid-template-columns: repeat(3, 1fr) para 5 itens</p>
+    <p>Como o número de repetição é 3 e temos 5 itens, os 3 primeiros itens ocupam a linha toda enquanto os dois últimos ocupam 2/3 do espaço disponível</p>
+    <p><strong>OBS:</strong> Semelhante ao flex-wrap</p>
+    <div id="grid-template-columns-3">
+        <div>1</div>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+    </div>
+
+    <h2>grid-template-rows</h2>
+    <p>Aumenta o tamanho da linha dos elementos da grid</p>
+    <p>Aplicando: grid-template-rows: 280px 1fr 2fr 50%;</p>
+    <p>O primeiro elemento terá 280px de altura, o segundo e o terceiro 1fr e 2fr respectivamente e o último ocupará 50% do tamanho disponível</p>
+    <div id="grid-template-rows">
+        <div>1</div>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+    <div class="margin"></div>
+    <p>Combinando grid-template-columns com grid-template-rows</p>
+    <p>Aplicando grid-template-columns: repeat(2, 1fr);</p>
+    <p>Aplicando grid-template-rows: 200px 100px;</p>
+
+
+    <div id="grid-template-rows-2">
+        <div>1º elemento com 200px de altura e 1fr de largura</div>
+        <span>2º elemento com 200px de altura e 1fr de largura</span>
+        <span>3º elemento com 100px de altura e 1 fr de largura</span>
+        <span>4º elemento com 100px de altura e 1 fr de largura</span>
+    </div>
+    <p>Aplicando grid-template-columns: 150px 1fr;</p>
+    <p>Aplicando grid-template-rows: 200px 100px;</p>
+    <div id="grid-template-rows-3">
+        <div>1</div>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+    <p>Aplicando repeat para ambos e height 50vh no container</p>
+    <p>Aplicando grid-template-columns: repeat(3, 1fr);</p>
+    <p>Aplicando grid-template-rows: repeat(3, 1fr);</p>
+    <div id="grid-template-rows-4">
+        <div>1</div>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+    <h1>Grid Column e Grid Rows</h1>
+    <p>Aplicando em 1: 
+       (grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 4;)</p>
+    <p>Aplicando em 2:
+        (grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 3;)</p>
+    <p>Aplicando em 3: (
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;)</p>
+    <div id="grid-template-rows-5">
+        <div>1</div>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+    </div>
+    <h1>Grid template areas</h1>
+    <p>Podemos separar os elementos dentro do container definindo uma grid dividida em literais áreas</p>
+    <p>Style:</p>
+    <p>
+        #grid-template-areas {
+            
+            display: grid;
+            grid-template-areas: 
+            "A B B"
+            "A B B"
+            "A C D";
+            height: 50vh;
+            border: solid green;
+        }
+    </p>
+    <p><strong>OBS:</strong> Podemos definir qualquer nome para as áreas</p>
+    <p>Como já definimos as áreas, agora é só inserir os elementos nas áreas A e B somente pois o resto se autocompleta</p>
+    <p>Ajustando A: #grid-template-areas div:nth-child(1)
+        {
+            grid-area: A;
+        }
+    </p>
+    <p>Ajustando B: #grid-template-areas span:nth-child(2)
+        {
+            grid-area: B;
+        }
+    </p>
+    <div id="grid-template-areas">
+        <div>A</div>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span> 
+    </div>
+
+    <h1>Gap</h1>
+    <p>No display: grid, podemos usar o gap para adicionar espaços entre os elementos</p>
+    <p>Aplicando gap: 20px e padding: 20px (para as laterais)</p>
+    <p>gap é shorthand para row-gap e column-gap</p>
+    <div id="grid-gap">
+        <div>A</div>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span> 
+    </div>
+
+    <h1>Shorthand-grid-template</h1>
+    <div id="grid-shorthand-template">
+        <div>A</div>
+        <span>B</span>
+        <span>C</span>
+        <span>D</span>
+    </div>
+
+    <h1>Propiedades de alinhamento para grid</h1>
+    <h2>Existem 9 propriedades fundamentais</h2>
+    <h3>6 aplicadas em container</h3>
+    <p>Content:</p>
+    <ul>
+        <li>'align-content'</li>
+        <li>'justify-content'</li>
+        <li>'place-content'</li>
+    </ul>
+    <p>Items:</p>
+    <ul>
+        <li>'align-items'</li>
+        <li>'justify-items'</li>
+        <li>'place-items'</li>
+    </ul>
+    <h3>3 aplicadas em item</h3>
+    <p>Self:</p>
+    <ul>
+        <li>'align-self'</li>
+        <li>'justify-self'</li>
+        <li>'place-self'</li>
+    </ul>
+
+    <p>Podemos separar em 3 grupos: 'align', 'justify', 'place'</p>
+    <p>E cada um deles irá observar ou o</p>
+    <ul>
+        <li>conteúdo do elemento 'content'</li>
+        <li>itens do elemento 'items'</li>
+        <li>o próprio elemento 'self'</li>
+    </ul>
+
+    <h1>Alinhamentos content</h1>
+
+    <h2>Eixo vertical</h2>
+    <h2>align-content: start</h2>
+
+    <div class="grid-content">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+    <h2>align-content: center</h2>
+
+    <div class="grid-content-2">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>align-content: end </h2>
+
+    <div class="grid-content-3">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>align-content: space around </h2>
+
+    <div class="grid-content-4">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>align-content: space between </h2>
+
+    <div class="grid-content-5">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>align-content: space evenly </h2>
+
+    <div class="grid-content-6">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+
+    <h2>Agora para o eixo horizontal</h2>
+    <h2>justify-content: center</h2>
+
+    <div class="grid-content-7">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>justify-content: end</h2>
+
+    <div class="grid-content-8">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+    
+    <h2>justify-content: space-around</h2>
+
+    <div class="grid-content-9">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>justify-content: space-between</h2>
+
+    <div class="grid-content-10">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>justify-content: space-evenly</h2>
+
+    <div class="grid-content-11">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+    
+    <h2>place-content: (lugar)</h2>
+    <p>Aplica justify-content e align-content em um mesmo lugar</p>
+    <h2>place-content: center</h2>
+    <div class="grid-content-12">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>place-content: space-around</h2>
+    <div class="grid-content-13">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>place-content: space-between</h2>
+    <div class="grid-content-14">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>place-content: space-evenly</h2>
+    <div class="grid-content-15">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h1>Alinhamentos items</h1>
+    <p>No caso, os itens azuis, não o conteúdo dentro deles</p>
+    <p>(align-items: stretch) é o padrão</p>
+
+
+    <h2>align-items: stretch</h2>
+
+    <div class="grid-items-0">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>align-items: start</h2>
+
+    <div class="grid-items-1">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>align-items: center</h2>
+
+    <div class="grid-items-2">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>align-items: end</h2>
+
+    <div class="grid-items-3">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>align-items: baseline</h2>
+
+    <p>Alinhamento baseado na linha</p>
+    <div class="grid-items-4">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>justify-items: start</h2>
+
+    <p>Agora para o eixo horizontal</p>
+    <div class="grid-items-5">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>justify-items: center</h2>
+
+    <div class="grid-items-6">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>justify-items: end</h2>
+
+    <div class="grid-items-7">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>place-items: (lugar)</h2>
+    <p>Aplica justify-items e align-items em um mesmo lugar</p>
+    <h2>place-items: start</h2>
+
+    <div class="grid-items-8">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>place-items: center</h2>
+
+    <div class="grid-items-9">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>place-items: end</h2>
+
+    <div class="grid-items-10">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h1>Alinhamentos self</h1>
+
+    <p>Alinhamento de um item específico dos itens azuis</p>
+    <h2>align-self</h2>
+
+    <div class="grid-self-1">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>justify-self</h2>
+
+    <div class="grid-self-2">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+    <h2>place-self</h2>
+
+    <div class="grid-self-3">
+        <div>a</div>
+        <div>b</div>
+        <div>c</div>
+        <div>d</div>
+        <div>e</div>
+        <div>f</div>
+        <div>g</div>
+        <div>h</div>
+        <div>i</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_functions.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        CSS Functions
+    </h1>
+    <p>Podemos aplicar funções no CSS, a sintáxe é: (função: + ação ou ação(parâmetro))</p>
+    
+    <h2>Transform</h2>
+    <p>Aplicamos transformações no elemento</p>
+    <p>transform: translate(desloc X, desloc Y), aplicamos um deslocamento do elemento, semelhante ao position</p>
+    <p>transform: rotate(), rotaciona o elemento em alguns graus</p>
+    <p>transform: scale(), aumenta o tamanho do elemento</p>
+
+    <p>Aplicando transform: translate(100px, 200px) rotate(40deg) scale(1); no elemento</p>
+    
+    <div class="transform">
+        <p>1</p>
+    </div>
+
+    <h2 style="margin-top: 50px;">Math functions</h2>
+    <p>Aplicamos funções matemáticas nos atributos dos elementos</p>
+    <p>calc(), podemos fazer um cálculo de 1, 2 ou mais valores usando as 4 operações básicas</p>
+    <p>max(), selecionamos o maior valor entre dois elementos</p>
+    <p>min(), selecionamos o menor valor entre dois elementos</p>
+    <p>clamp(), a página escolhe um valor de 3 em que se adequa melhor ao elemento</p>
+
+    <p>Aplicando no elemento: width: calc(30px + 1rem);
+        height: max(calc(20% + 10vh), min(30vh, 100px));
+    
+        font-size: clamp(1rem , 7vw, 4rem);</p>
+
+    <div class="math">
+        <p>1</p>
+    </div>
+
+    <p>Podemos usar outras funções matemáticas como:</p>
+    <p>Funções trigonométricas: sin(), cos(), tan()</p>
+    <p>Funções exponenciais: pow(), sqrt()</p>
+
+    <h2>Filter functions</h2>
+
+    <p>Podemos aplicar filtros de estilização nos elementos</p>
+
+    <div class="filters">
+        <p>filter: blur, aplica o efeito blur no elemento</p>
+        <div class="filters-blur">
+        </div>    
+        <p>filter: brightness, aplica um brilho no elemento</p>
+        <div class="filter-brightness">
+        </div>
+        <p>filter: contrast, aplica um efeito de contraste na imagem</p>
+        <div class="filter-contrast">
+        </div>
+        <p>filter: drop-shadow, aplica uma sombra no elemento</p>
+        <div class="filter-drop-shadow">
+        </div>
+        <p>filter: opacity, aplica uma transparência no elemento</p>
+        <div class="filter-opacity">
+        </div>
+        <p>filter: invert, inverte as cores do elemento</p>
+        <div class="filter-invert">
+            <p>1</p>
+        </div>
+        <p>filter: hue-rotate(), troca a cor do elemento a partir de um deslocamento partindo da cor atual</p>
+        <p>Aplicando hue-rotate(100) no elemento com background-color: aqua</p>
+        <div class="filter-hue-rotate">
+        </div>
+    </div>
+    
+    <h2>Color functions</h2>
+
+    <p>Aplicando cores no elemento</p>
+    <p>Funções:</p>
+    <p>rgb(x, y, z) (0-255, 0-255, 0-255)</p>
+    <p>hsla(x, y, z, opacidade) (0-300, 0-100%, 0-100%, 0-1)</p>
+
+    <p>color-mix(in + tipo X, cor1 tipo X, cor2 tipo X), mistura cores</p>
+    <p>background-color: color-mix(
+        in hsl,
+        hsl(), hsl()    
+    )</p>
+
+    <h2>Gradient functions</h2>
+    <p>Aplica um efeito "degradê" no background</p>
+    <p>as gradient functions são vistas como imagens pelo CSS, então podemos aplicá-las também usando background-image:</p>
+    <p>aplicando: background: linear-gradient(
+        90deg,
+        red, green, aqua,  blue
+    );</p>
+    <div class="linear-gradient">
+    </div>
+    <p>aplicando: background: linear-gradient(
+        to left,
+        red, green, aqua,  blue
+    );</p>
+    <div class="linear-gradient-2"></div>
+    <p>aplicando: background: linear-gradient(
+        to left,
+        red, green 80%, aqua,  blue
+    );</p>
+    <div class="linear-gradient-3"></div>
+    <h3>Aplicando radial-gradient</h3>
+    <p>aplicando: background: radial-gradient(blue 50%, red);</p>
+    <div class="radial-gradient">
+
+    </div>
+    <h2>Clip Path</h2>
+
+    <p>Podemos aplicar formas específicas aos elementos</p>
+    <p>As principais são: clip-path: circle | clip-path: polygon</p>
+
+    <p>clip-path: circle: Aplica a forma de um círculo</p>
+    <div class="clip-path-circle">
+
+    </div>
+    <p>clip-path: polygon: Aplica uma forma específica</p>
+    <p>aplicando: clip-path: polygon(50% 0%, 0% 100%, 100% 100%);</p>
+    <div class="clip-path-polygon">
+    </div>
+
+
+
+</body>
+</html>

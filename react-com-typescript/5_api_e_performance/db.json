@@ -1,0 +1,20 @@
+{
+  "transactions": [
+    {
+      "id": "88a9",
+      "description": "a",
+      "price": 1,
+      "category": "aa",
+      "type": "income",
+      "createdAt": "2025-04-01T20:47:25.546Z"
+    },
+    {
+      "id": "af83",
+      "description": "aaaa",
+      "price": 11,
+      "category": "aaaa",
+      "type": "outcome",
+      "createdAt": "2025-04-01T20:47:31.861Z"
+    }
+  ]
+}

@@ -1,0 +1,246 @@
+/* display: block 
+
+    - Os elementos ocupam toda a linha como um bloco
+    - 'width' e 'height' são aplicados
+    - 'padding', 'margin', 'border' funcionam por completo
+
+    Alguns elementos vem com o (display: block) por padrão como: 
+
+    '<div>, <main>, <header>, <section>, <p>' dentre outros...
+
+
+*/
+
+.block-test span {
+    display: block;
+
+    border: solid;
+    border-color: black;
+    color: red;
+
+    width: 100px;
+    height: 100px;
+
+    padding: 20px;
+    margin: 20px;
+    
+}
+
+/* display: inline 
+
+    - Os elementos ocupam apenas o espaço do conteúdo do elemento
+    - Os elementos poderão ficar 'em linha'
+    - 'width' e 'height' não se aplicam
+    - Aplicamos apenas os valores horizontais de
+        'margin', 'padding' e 'border'
+    
+    Alguns elementos vem com o (display: inline) por padrão como:
+
+    '<a>, <span>, <strong>, <em>' dentre outros
+
+*/
+
+.inline-test span, .inline-test p {
+    display: inline; /*Para span é redundante*/
+    
+    border: solid;
+
+
+    margin-left: 30px;
+    margin-right: 30px;
+
+    padding: 20px; /*Padding para elementos inline pode não 
+                    funcionar corretamente*/
+
+}
+
+
+/* border 
+
+    Nas bordas, é possível aplicar: 
+
+    - Estilo (border-style)
+    - Largura (border-width)
+    - Cor (border-color)
+
+    Por obrigatoriedade, é necessário aplicar pelo menos o border-style
+
+*/
+
+.border {
+    margin-top: 50px;
+}
+
+.border-test {
+    /*border: 1px solid red;*/ /*tamanho 1px, estilo solid e cor vermelha*/
+    border-width: 4px 2px 6px 4px; /*estilos aplicados respectivamente em
+    cima, direita, baixo, esquerda*/
+    border-style: dotted solid double dashed; /*estilos aplicados respectivamente em
+    cima, direita, baixo, esquerda*/
+
+    /*se tivesse apenas border-atributo: estilo 1 estilo 2
+      esses estilos seriam aplicados em cima-baixo depois em esquerda-direita respectivamente*/
+
+    border-color:darkturquoise red green yellow;
+
+}
+
+.border #border-outroteste {
+    border-bottom: solid red 5px;
+}
+
+/* width e height*/
+
+.width-height {
+    margin-top: 50px;
+}
+
+.width-height div, .width-height span {
+    border: solid;
+    width: 200px; /*limite de largura aplicado apenas no div porque no span 'width' não se aplica*/
+    height: 300px; /*limite de altura aplicado apenas no div porque no span 'height' não se aplica*/
+
+    /*O conteúdo de uma caixa pode transbordar para fora dela*/
+
+}
+
+/* margin */
+
+.margin {
+    margin-top: 50px;
+}
+
+
+.margin-test {
+    margin: 30px; /*novamente, para inline, as margens top e bottom não e aplicam, somente
+                    margens laterais*/
+    border: solid red;
+    margin: auto;
+    width: 50%;
+
+    /*'margin: auto' serve para o browser aplicar uma margin em todos os lados
+    centralizando o conteúdo na página (pode não funcionar corretamente)
+    
+    Ex: ali em cima temos width: 50%, ou seja, a div vai ocupar 50% do espaço
+    permitido, usando o margin: auto, centralizamos a div porque ele vai aplicar uma
+    margin automática em todos os lados
+    
+    */
+
+    
+    
+}
+
+
+/*Padding, serve para aplicar uma distancia entre as bordas da caixa e o seu
+conteúdo
+*/
+
+
+.padding {
+    margin-top: 50px;
+}
+
+.padding-test {
+    border: solid red;
+    width: 200px;
+    height: 100px;
+    padding: 35px;
+    box-sizing: border-box;
+    
+
+    /*O box-sizing com o valor border-box faz com que o navegador não calcule
+     a dimensão de um elemento somando bordas e margens com altura e largura.
+     
+     Como o tamanho de um elemento é a soma das dimensões width ou height + padding + tamanho da borda,
+    o elemento poderá sair dos limites da caixa, usando box-sizing: border-box, limitamos o elemento para dentro
+    dos limites da caixa, ou seja, o tamanho final do elemento será os limites de width e height
+     
+     */
+}
+
+
+/*Fontes*/
+
+.fonts h1 {
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.fonts a {
+    text-decoration: none; /*text-decoration, é útil para aplicar uma decoração ao texto */
+}
+
+
+.fonts p {
+    font-size: 16px;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: blue;
+    text-transform: lowercase;
+    font-weight: bold;
+    text-align: center; /*Alinha o texto no centro*/
+    /*text-align: justify (coloca espaço entre as palavras do texto)*/
+    /*text-align: right/left (alinha o texto na esquerda, ou direita)*/
+    line-height: 2.5; /*Insere uma altura entre as linhas do texto*/
+    letter-spacing: 5px; /*Insere um espaçamento entre as letras de uma palavra*/
+    word-spacing: 9px; /*Insere um espaçamento entre palavras*/
+
+}
+
+
+/*importando fontes*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.web-fonts p{
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+.backgrounds-and-colors {
+    margin-top: 50px;
+}
+
+.backgrounds-and-colors-tests {
+    width: 1000px;
+    height: 1000px;
+    background-color: blueviolet;
+    background-image: url('imagem.PNG');
+
+
+    /*background-size, define o tamanho do item/imagem
+    
+    background-size: cover, faz o item/imagem cobrir a área inteira da caixa
+    background-size: contain, semelhante ao cover, porém a imagem 
+     é redimensionada para caber dentro do elemento, mantendo sua proporção original
+
+    Resumo: 
+    
+    Cover: Preenche o elemento, pode cortar a imagem.
+    Contain: Mantém a imagem inteira visível, mas pode deixar espaços vazios.
+
+
+
+
+    */
+    background-size: cover;
+
+
+    /*background-position define a posição do item/imagem
+    
+    background-position-x define a posição do item/imagem no eixo x
+    background-position-y define a posição do item/imagem no eixo y
+    background-position: center, centraliza o item/imagem no centro da caixa
+
+    */
+    background-position: center;
+
+    /*background-repeat serve pra definir as propriedades de repetição da imagem
+    por padrão, se o tamanho da imagem for menor do que o tamanho da caixa, ela irá repetir
+    
+    background-repeat: repeat-x; <------- repete a imagem no eixo X
+    background-repeat: repeat-y; <------- repete a imagem no eixo Y
+    background-repeat: no-repeat; <------- impede a repetição de imagem
+    */
+    background-repeat: no-repeat;
+
+    
+}

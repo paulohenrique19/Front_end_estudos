@@ -1,0 +1,25 @@
+.wrapper {
+    max-width: 70rem;
+    /*centralizando os elementos na tela*/
+    margin: 2rem auto;
+    padding: 0 1rem;
+
+    display: grid;
+    /*o lado esquerdo terá tamanho fixo enquando o lado direito
+    será adaptado para o quanto couber na tela*/
+    grid-template-columns: 256px 1fr;
+    gap: 2rem;
+
+    align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+
+    html {
+        font-size: 87.5%
+    }
+
+    .wrapper {
+        grid-template-columns: 1fr;
+    }
+}

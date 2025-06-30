@@ -1,0 +1,16 @@
+:root {
+    --bg-color: aqua;
+    --txt-color: black;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--txt-color)
+}
+
+@media screen and (min-width: 576px) {
+    :root {
+        --bg-color: green;
+        --txt-color: white;
+    }
+}

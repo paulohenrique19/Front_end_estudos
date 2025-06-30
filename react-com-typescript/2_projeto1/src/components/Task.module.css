@@ -1,0 +1,51 @@
+.taskArea {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 46rem;
+    height: auto;
+    padding: 1rem;
+    background-color: var(--gray-500);
+    border-radius: 0.5rem;
+    flex-wrap: wrap;  /* Permite que os itens dentro da div se movam para a linha de baixo */
+    align-items: flex-start;  /* Alinha os itens na parte superior */
+}
+
+.taskArea p {
+    color: var(--gray-100);
+    overflow-wrap: break-word;  /* Garante que palavras longas que não cabem quebrem */
+    word-break: break-word;     /* Força a quebra de texto muito longo */
+    margin-bottom: 0; /* Remove qualquer margem extra no parágrafo */
+}
+
+.taskArea del {
+    color: var(--gray-100);
+    overflow-wrap: break-word;  /* Garante que palavras longas que não cabem quebrem */
+    word-break: break-word;     /* Força a quebra de texto muito longo */
+    margin-bottom: 0;
+}
+
+.flexStart {
+    align-self: flex-start;
+}
+
+.select {
+    color: unset;
+}
+
+.select:hover {
+    color: var(--blue-dark);
+}
+
+.flexEnd {
+    align-self: flex-end;
+}
+
+.trash {
+    color: grey;
+}
+
+.trash:hover {
+    color: var(--danger);
+}
