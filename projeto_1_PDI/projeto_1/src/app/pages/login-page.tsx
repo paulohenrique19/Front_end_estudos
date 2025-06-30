@@ -44,7 +44,8 @@ export default function LoginPage() {
                 <Input id="password" type="password" {...register('password')}/>
             </div>
             <Button disabled={isSubmitting} type="submit">Acessar painel</Button>
-            </div>
+            <p>Teste</p>
+        </div>
     )
 }
 
