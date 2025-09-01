@@ -89,6 +89,19 @@ export default function CadastroPage() {
         <Button type="submit" className="w-full" disabled={isSubmitting}>
           {isSubmitting ? "Cadastrando..." : "Cadastrar"}
         </Button>
+        <div className="flex justify-between mt-4">
+          <span className="text-sm text-muted-foreground">
+            Já tem conta?
+          </span>
+          <Button
+            type="button"
+            variant="link"
+            size="sm"
+            onClick={() => router.push("/login")}
+          >
+            Entrar
+          </Button>
+        </div>
       </form>
     </div>
   )

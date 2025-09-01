@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { User } from 'firebase/auth'
 import {
   Dialog,
@@ -23,9 +23,9 @@ import {
 import { Input } from './ui/input'
 import { doc, setDoc } from 'firebase/firestore'
 import { db } from '@/lib/firebase'
-import { useRouter } from 'next/navigation'
+import { Loader2 } from 'lucide-react'
 
-const registerSiteForm = z.object({
+const editSiteForm = z.object({
   nome: z.string().max(100, "Tamanho máximo, 100 caractéres"),
   site: z.string()
     .min(1, "Insira uma URL")
@@ -40,33 +40,39 @@ const registerSiteForm = z.object({
     }, { message: "Insira uma URL válida" }),
 })
 
-type RegisterSiteForm = z.infer<typeof registerSiteForm>
+type EditSiteForm = z.infer<typeof editSiteForm>
 
-type NewSiteProps = {
+type EditSiteProps = {
   usuario: User | null
   open: boolean
   onOpenChange: (open: boolean) => void
-  onSiteAdded: () => void 
+  siteData: {
+    id: string
+    nome: string
+    site: string
+  }
+  onSiteUpdated: () => void
 }
 
-const NewSite = ({ usuario, open, onOpenChange, onSiteAdded }: NewSiteProps) => {
+const EditSite = ({ usuario, open, onOpenChange, siteData, onSiteUpdated }: EditSiteProps) => {
   const [user, setUser] = useState<User | null>(null)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     setUser(usuario)
-  }, [usuario]) 
+  }, [usuario])
 
-  const router = useRouter()
-
-  const form = useForm<RegisterSiteForm>({
-    resolver: zodResolver(registerSiteForm),
+  const form = useForm<EditSiteForm>({
+    resolver: zodResolver(editSiteForm),
     defaultValues: {
-      nome: "",
-      site: ""
+      nome: siteData.nome,
+      site: siteData.site,
     }
   })
 
-  const handleCreateNewSite = async (data: RegisterSiteForm) => {
+  const handleUpdateSite = async (data: EditSiteForm) => {
+    setLoading(true)
+
     const normalizedUrl = data.site.startsWith("http://") || data.site.startsWith("https://")
       ? data.site
       : `https://${data.site}`
@@ -81,29 +87,26 @@ const NewSite = ({ usuario, open, onOpenChange, onSiteAdded }: NewSiteProps) => 
       })
 
       onOpenChange(false)
-      onSiteAdded()
-    } catch (firestoreErr: any) {
-      console.error("Erro ao cadastrar um site", firestoreErr)
-      return
+      onSiteUpdated()
+    } catch (err: any) {
+      console.error("Erro ao atualizar site", err)
+    } finally {
+      setLoading(false)
     }
-
-    router.push('/dashboard')
-    console.log("Usuário:", user?.uid)
-    console.log("Dados do formulário:", data)
   }
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Cadastrar novo site</DialogTitle>
+          <DialogTitle>Editar site</DialogTitle>
           <DialogDescription>
-            Insira a URL do site que você deseja monitorar.
+            Atualize os dados do site monitorado.
           </DialogDescription>
         </DialogHeader>
 
         <Form {...form}>
-          <div className='space-y-8'>
+          <div className="space-y-8">
             <FormField
               control={form.control}
               name="nome"
@@ -111,7 +114,7 @@ const NewSite = ({ usuario, open, onOpenChange, onSiteAdded }: NewSiteProps) => 
                 <FormItem>
                   <FormLabel>Nome</FormLabel>
                   <FormControl>
-                    <Input placeholder="Insira o nome do site aqui" {...field} />
+                    <Input {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -125,7 +128,7 @@ const NewSite = ({ usuario, open, onOpenChange, onSiteAdded }: NewSiteProps) => 
                 <FormItem>
                   <FormLabel>Site</FormLabel>
                   <FormControl>
-                    <Input placeholder="Insira a URL do site aqui" {...field} />
+                    <Input {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -135,9 +138,11 @@ const NewSite = ({ usuario, open, onOpenChange, onSiteAdded }: NewSiteProps) => 
             <button
               type="button"
               className="btn btn-primary"
-              onClick={form.handleSubmit(handleCreateNewSite)}
+              disabled={loading}
+              onClick={form.handleSubmit(handleUpdateSite)}
             >
-              Cadastrar
+              {loading ? <Loader2 className="animate-spin mr-2" /> : null}
+              Salvar alterações
             </button>
           </div>
         </Form>
@@ -146,4 +151,4 @@ const NewSite = ({ usuario, open, onOpenChange, onSiteAdded }: NewSiteProps) => 
   )
 }
 
-export default NewSite
+export default EditSite

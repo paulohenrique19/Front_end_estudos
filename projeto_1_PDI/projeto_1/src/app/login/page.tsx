@@ -44,6 +44,9 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
+
+      
+
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="w-full max-w-sm space-y-6 bg-card p-8 rounded-2xl shadow-lg"
@@ -71,7 +74,21 @@ export default function LoginPage() {
         <Button type="submit" className="w-full" disabled={isSubmitting}>
           {isSubmitting ? "Entrando..." : "Entrar"}
         </Button>
+        <div className="flex justify-between mt-4">
+          <span className="text-sm text-muted-foreground">
+            Não tem conta?
+          </span>
+          <Button
+            type="button"
+            variant="link"
+            size="sm"
+            onClick={() => router.push("/cadastro")}
+          >
+            Cadastrar
+          </Button>
+        </div>
       </form>
     </div>
+    
   )
 }
